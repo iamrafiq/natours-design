@@ -6,3 +6,99 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, -30% 100%);
+}
+
+.header {
+  height: 95vh; /*means 95 percent of view port height*/
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url("../img/hero.jpg");
+  background-size: cover; /*cover means image will fite inside of the box, in our case it is header*/
+  background-position: top;
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+.logo {
+  height: 35px; /*do not need to specify the width, because widit will automatically specify by the browser*/
+}
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden; /*removing the shaking using animation moveInLeft and moveInRight*/
+
+}
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* animation-iteration-count: 3; */
+  /* animation-delay: 3s; */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+  /*sorter from*/
+  animation: moveInRight ease-out 1s;
+}
+@keyframes moveInLeft{
+    0%{ /*when animation start*/
+        opacity: 0;
+        transform: translateX(-100px); /* when animation start move the element 100px left of it's orginal position*/
+    }
+    80%{ /*when animation 80%*/
+        transform: translateX(10px); /*means for with in 0% to 80% animtion will start from -100px and move to 10px from it's original position*/
+    }
+    100%{ /*when animation finish*/
+        opacity: 1;
+        transform: translate(0);/* 0 means object will return back to the postion it was before animaiton started*/
+    }
+}
+
+@keyframes moveInRight{
+    0%{ /*when animation start*/
+        opacity: 0;
+        transform: translateX(100px); /* when animation start move the element 100px right of it's orginal position*/
+    }
+    80%{ /*when animation 80%*/
+        transform: translateX(-10px); /*means for with in 0% to 80% animtion will start from 100px and move to -10px from it's original position*/
+    }
+    100%{ /*when animation finish*/
+        opacity: 1;
+        transform: translate(0);/* 0 means object will return back to the postion it was before animaiton started*/
+    }
+}
