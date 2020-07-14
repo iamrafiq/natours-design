@@ -6,20 +6,26 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
-
+html{
+  font-size: 10px;
+}
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: .3rem;
   clip-path: polygon(0 0, 100% 0, 100% 75%, -30% 100%);
+  box-sizing: border-box;
+
 }
 
 .header {
@@ -37,29 +43,31 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 .logo {
-  height: 35px; /*do not need to specify the width, because widit will automatically specify by the browser*/
+  height: 3.5rem; /*do not need to specify the width, because widit will automatically specify by the browser*/
 }
 .text-box{
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);  
+    text-align: center;
 }
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden; /*removing the shaking using animation moveInLeft and moveInRight*/
+  margin-bottom: 6rem;
 
 }
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -69,19 +77,19 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
   /*sorter from*/
-  animation: moveInRight ease-out 1s;
+  animation: moveInRight 1s ease-out;
 }
 @keyframes moveInLeft{
     0%{ /*when animation start*/
         opacity: 0;
-        transform: translateX(-100px); /* when animation start move the element 100px left of it's orginal position*/
+        transform: translateX(-10rem); /* when animation start move the element 100px left of it's orginal position*/
     }
     80%{ /*when animation 80%*/
-        transform: translateX(10px); /*means for with in 0% to 80% animtion will start from -100px and move to 10px from it's original position*/
+        transform: translateX(1rem); /*means for with in 0% to 80% animtion will start from -100px and move to 10px from it's original position*/
     }
     100%{ /*when animation finish*/
         opacity: 1;
@@ -92,13 +100,75 @@ body {
 @keyframes moveInRight{
     0%{ /*when animation start*/
         opacity: 0;
-        transform: translateX(100px); /* when animation start move the element 100px right of it's orginal position*/
+        transform: translateX(10rem); /* when animation start move the element 100px right of it's orginal position*/
     }
     80%{ /*when animation 80%*/
-        transform: translateX(-10px); /*means for with in 0% to 80% animtion will start from 100px and move to -10px from it's original position*/
+        transform: translateX(-1rem); /*means for with in 0% to 80% animtion will start from 100px and move to -10px from it's original position*/
     }
     100%{ /*when animation finish*/
         opacity: 1;
         transform: translate(0);/* 0 means object will return back to the postion it was before animaiton started*/
     }
+}
+@keyframes moveInBottom{
+  0%{ /*when animation start*/
+      opacity: 0;
+      transform: translateY(3rem); /* when animation start move the element 100px right of it's orginal position*/
+  }
+  100%{ /*when animation finish*/
+      opacity: 1;
+      transform: translate(0);/* 0 means object will return back to the postion it was before animaiton started*/
+  }
+}
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.btn:hover{
+  transform: translateY(-.3rem);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+.btn:active{
+  transform: translateY(-.1rem);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
+.btn-white{
+  background-color: #fff;
+  color: #777;
+  padding: 1.5rem 4.rem;
+  display: inline-block;
+}
+
+.btn::after{ /* .btn::after is element, and its parent is .btn*/
+  content: ""; /*we must specify it's content to apear this psudo element on page, it may contian nothing*/
+  display: inline-block;/*since it's parent .btn is inline-block it muslt also be inline-block other wise we can not set padding margin height property"*/
+  height: 100%; /*100% of it's parent height, in here it's parent is .btn"*/
+  width: 100%; /*100% of it's parent width, in here it's parent is .btn"*/
+  border-radius: 10rem;
+  position: absolute; /*taking behind of parent by using position: absolute*/
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+
+}
+
+.btn-white::after{
+ background-color: #fff;
+}
+.btn:hover::after{ /*in here after is the element we created for the button before*/
+  transform: scaleX(1.4) scaleY(1.6); /*when user hover on the button scale the after element*/ 
+  opacity: 0;
+}
+
+.btn-animated{
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
 }
