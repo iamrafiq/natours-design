@@ -1,21 +1,13 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
-html{
-  font-size: 10px;
-}
+  box-sizing: inherit; }
+
+html {
+  font-size: 10px; }
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -24,45 +16,40 @@ body {
   color: #777;
   padding: .3rem;
   clip-path: polygon(0 0, 100% 0, 100% 75%, -30% 100%);
-  box-sizing: border-box;
-
-}
+  box-sizing: border-box; }
 
 .header {
-  height: 95vh; /*means 95 percent of view port height*/
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 133, 0.8)
-    ),
-    url("../img/hero.jpg");
-  background-size: cover; /*cover means image will fite inside of the box, in our case it is header*/
+  height: 95vh;
+  /*means 95 percent of view port height*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  /*cover means image will fite inside of the box, in our case it is header*/
   background-position: top;
-  position: relative;
-}
+  position: relative; }
 
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem;
-}
+  left: 4rem; }
+
 .header__logo {
-  height: 3.5rem; /*do not need to specify the width, because widit will automatically specify by the browser*/
-}
-.header__text-box{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);  
-    text-align: center;
-}
+  height: 3.5rem;
+  /*do not need to specify the width, because widit will automatically specify by the browser*/ }
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  backface-visibility: hidden; /*removing the shaking using animation moveInLeft and moveInRight*/
-  margin-bottom: 6rem;
+  backface-visibility: hidden;
+  /*removing the shaking using animation moveInLeft and moveInRight*/
+  margin-bottom: 6rem; }
 
-}
 .heading-primary--main {
   display: block;
   font-size: 6rem;
@@ -72,8 +59,7 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
   /* animation-iteration-count: 3; */
-  /* animation-delay: 3s; */
-}
+  /* animation-delay: 3s; */ }
 
 .heading-primary--sub {
   display: block;
@@ -81,45 +67,52 @@ body {
   font-weight: 700;
   letter-spacing: 1.75rem;
   /*sorter from*/
-  animation: moveInRight 1s ease-out;
-}
-@keyframes moveInLeft{
-    0%{ /*when animation start*/
-        opacity: 0;
-        transform: translateX(-10rem); /* when animation start move the element 100px left of it's orginal position*/
-    }
-    80%{ /*when animation 80%*/
-        transform: translateX(1rem); /*means for with in 0% to 80% animtion will start from -100px and move to 10px from it's original position*/
-    }
-    100%{ /*when animation finish*/
-        opacity: 1;
-        transform: translate(0);/* 0 means object will return back to the postion it was before animaiton started*/
-    }
-}
+  animation: moveInRight 1s ease-out; }
 
-@keyframes moveInRight{
-    0%{ /*when animation start*/
-        opacity: 0;
-        transform: translateX(10rem); /* when animation start move the element 100px right of it's orginal position*/
-    }
-    80%{ /*when animation 80%*/
-        transform: translateX(-1rem); /*means for with in 0% to 80% animtion will start from 100px and move to -10px from it's original position*/
-    }
-    100%{ /*when animation finish*/
-        opacity: 1;
-        transform: translate(0);/* 0 means object will return back to the postion it was before animaiton started*/
-    }
-}
-@keyframes moveInBottom{
-  0%{ /*when animation start*/
-      opacity: 0;
-      transform: translateY(3rem); /* when animation start move the element 100px right of it's orginal position*/
-  }
-  100%{ /*when animation finish*/
-      opacity: 1;
-      transform: translate(0);/* 0 means object will return back to the postion it was before animaiton started*/
-  }
-}
+@keyframes moveInLeft {
+  0% {
+    /*when animation start*/
+    opacity: 0;
+    transform: translateX(-10rem);
+    /* when animation start move the element 100px left of it's orginal position*/ }
+  80% {
+    /*when animation 80%*/
+    transform: translateX(1rem);
+    /*means for with in 0% to 80% animtion will start from -100px and move to 10px from it's original position*/ }
+  100% {
+    /*when animation finish*/
+    opacity: 1;
+    transform: translate(0);
+    /* 0 means object will return back to the postion it was before animaiton started*/ } }
+
+@keyframes moveInRight {
+  0% {
+    /*when animation start*/
+    opacity: 0;
+    transform: translateX(10rem);
+    /* when animation start move the element 100px right of it's orginal position*/ }
+  80% {
+    /*when animation 80%*/
+    transform: translateX(-1rem);
+    /*means for with in 0% to 80% animtion will start from 100px and move to -10px from it's original position*/ }
+  100% {
+    /*when animation finish*/
+    opacity: 1;
+    transform: translate(0);
+    /* 0 means object will return back to the postion it was before animaiton started*/ } }
+
+@keyframes moveInBottom {
+  0% {
+    /*when animation start*/
+    opacity: 0;
+    transform: translateY(3rem);
+    /* when animation start move the element 100px right of it's orginal position*/ }
+  100% {
+    /*when animation finish*/
+    opacity: 1;
+    transform: translate(0);
+    /* 0 means object will return back to the postion it was before animaiton started*/ } }
+
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -128,47 +121,49 @@ body {
   border-radius: 10rem;
   transition: all .2s;
   position: relative;
-  font-size: 1.6rem;
-}
+  font-size: 1.6rem; }
 
-.btn:hover{
-  transform: translateY(-.3rem);
-  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
-}
-.btn:active{
-  transform: translateY(-.1rem);
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-}
-.btn--white{
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
   background-color: #fff;
   color: #777;
-  padding: 1.5rem 4.rem;
-  display: inline-block;
-}
+  padding: 1.5rem 4rem;
+  display: inline-block; }
 
-.btn::after{ /* .btn::after is element, and its parent is .btn*/
-  content: ""; /*we must specify it's content to apear this psudo element on page, it may contian nothing*/
-  display: inline-block;/*since it's parent .btn is inline-block it muslt also be inline-block other wise we can not set padding margin height property"*/
-  height: 100%; /*100% of it's parent height, in here it's parent is .btn"*/
-  width: 100%; /*100% of it's parent width, in here it's parent is .btn"*/
+.btn::after {
+  /* .btn::after is element, and its parent is .btn*/
+  content: "";
+  /*we must specify it's content to apear this psudo element on page, it may contian nothing*/
+  display: inline-block;
+  /*since it's parent .btn is inline-block it muslt also be inline-block other wise we can not set padding margin height property"*/
+  height: 100%;
+  /*100% of it's parent height, in here it's parent is .btn"*/
+  width: 100%;
+  /*100% of it's parent width, in here it's parent is .btn"*/
   border-radius: 10rem;
-  position: absolute; /*taking behind of parent by using position: absolute*/
+  position: absolute;
+  /*taking behind of parent by using position: absolute*/
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s;
+  transition: all .4s; }
 
-}
+.btn--white::after {
+  background-color: #fff; }
 
-.btn--white::after{
- background-color: #fff;
-}
-.btn:hover::after{ /*in here after is the element we created for the button before*/
-  transform: scaleX(1.4) scaleY(1.6); /*when user hover on the button scale the after element*/ 
-  opacity: 0;
-}
+.btn:hover::after {
+  /*in here after is the element we created for the button before*/
+  transform: scaleX(1.4) scaleY(1.6);
+  /*when user hover on the button scale the after element*/
+  opacity: 0; }
 
-.btn--animated{
+.btn--animated {
   animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards;
-}
+  animation-fill-mode: backwards; }
