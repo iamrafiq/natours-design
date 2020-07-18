@@ -1,0 +1,30 @@
+
+.header {
+    height: 95vh; /*means 95 percent of view port height*/
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url("../img/hero.jpg");
+    background-size: cover; /*cover means image will fite inside of the box, in our case it is header*/
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+    position: relative;
+
+    &__logo-box {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+    }
+    &__logo {
+      height: 3.5rem; /*do not need to specify the width, because widit will automatically specify by the browser*/
+    }
+    &__text-box {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }

@@ -1,0 +1,61 @@
+@keyframes moveInLeft {
+    0% {
+      /*when animation start*/
+      opacity: 0;
+      transform: translateX(
+        -10rem
+      ); /* when animation start move the element 100px left of it's orginal position*/
+    }
+    80% {
+      /*when animation 80%*/
+      transform: translateX(
+        1rem
+      ); /*means for with in 0% to 80% animtion will start from -100px and move to 10px from it's original position*/
+    }
+    100% {
+      /*when animation finish*/
+      opacity: 1;
+      transform: translate(
+        0
+      ); /* 0 means object will return back to the postion it was before animaiton started*/
+    }
+  }
+  
+  @keyframes moveInRight {
+    0% {
+      /*when animation start*/
+      opacity: 0;
+      transform: translateX(
+        10rem
+      ); /* when animation start move the element 100px right of it's orginal position*/
+    }
+    80% {
+      /*when animation 80%*/
+      transform: translateX(
+        -1rem
+      ); /*means for with in 0% to 80% animtion will start from 100px and move to -10px from it's original position*/
+    }
+    100% {
+      /*when animation finish*/
+      opacity: 1;
+      transform: translate(
+        0
+      ); /* 0 means object will return back to the postion it was before animaiton started*/
+    }
+  }
+  @keyframes moveInBottom {
+    0% {
+      /*when animation start*/
+      opacity: 0;
+      transform: translateY(
+        3rem
+      ); /* when animation start move the element 100px right of it's orginal position*/
+    }
+    100% {
+      /*when animation finish*/
+      opacity: 1;
+      transform: translate(
+        0
+      ); /* 0 means object will return back to the postion it was before animaiton started*/
+    }
+  }

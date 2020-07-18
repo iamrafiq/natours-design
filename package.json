@@ -1,0 +1,22 @@
+{
+  "name": "natours-design",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "start": "node-sass sass/main.scss  css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linuxrafiq/natours-design.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linuxrafiq/natours-design/issues"
+  },
+  "homepage": "https://github.com/linuxrafiq/natours-design#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

@@ -1,0 +1,55 @@
+
+.btn {
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      border-radius: 10rem;
+      transition: all 0.2s;
+      position: relative;
+      font-size: 1.6rem;
+    }
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      &::after {
+        /*in here after is the element we created for the button before*/
+        transform: scaleX(1.4) scaleY(1.6); /*when user hover on the button scale the after element*/
+        opacity: 0;
+      }
+    }
+    &:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
+    &--white {
+      background-color: $color-white;
+      color: $color-grey-dark;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      &::after {
+        background-color: $color-white;
+      }
+    }
+  
+    &--animated {
+      animation: moveInBottom 0.5s ease-out 0.75s;
+      animation-fill-mode: backwards;
+    }
+  
+    &::after {
+      /* .btn::after is element, and its parent is .btn*/
+      content: ""; /*we must specify it's content to apear this psudo element on page, it may contian nothing*/
+      display: inline-block; /*since it's parent .btn is inline-block it muslt also be inline-block other wise we can not set padding margin height property"*/
+      height: 100%; /*100% of it's parent height, in here it's parent is .btn"*/
+      width: 100%; /*100% of it's parent width, in here it's parent is .btn"*/
+      border-radius: 10rem;
+      position: absolute; /*taking behind of parent by using position: absolute*/
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s;
+    }
+  }
+  
