@@ -6,9 +6,10 @@
         rgba($color-primary-light, 0.8),
         rgba($color-primary-dark, 0.8)
       ),
-      url("../img/hero.jpg");
+      url("../img/hero.jpg"); /* moving only one level becaue scss file will converted to style.css */
     background-size: cover; /*cover means image will fite inside of the box, in our case it is header*/
     background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
     position: relative;
 
@@ -27,4 +28,5 @@
       transform: translate(-50%, -50%);
       text-align: center;
     }
+    
   }
